@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFFAB886D),
         elevation: 0,
         leading: Builder(builder: (context) {
           return IconButton(
@@ -22,13 +22,13 @@ class _HomePageState extends State<HomePage> {
             },
             icon: const Icon(
               Icons.menu,
-              color: Colors.black,
+              color: Color.fromARGB(255, 255, 255, 255), // Warna icon menu
             ),
           );
         }),
       ),
       drawer: Drawer(
-        backgroundColor: Color(0xFFD19B04),
+        backgroundColor: const Color(0xFFAB886D),
         child: Column(
           children: [
             // logo
@@ -39,24 +39,20 @@ class _HomePageState extends State<HomePage> {
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj16j2eZUjOKm39fT83fGQ0NsN0ercmEXcZA&s'),
               ),
             ),
-
-            // other pages
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             const Padding(
-              padding: EdgeInsets.only(left: 15),
+              padding: const EdgeInsets.only(left: 15),
               child: ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.person,
                   color: Colors.white,
                 ),
-                title: Text(
+                title: const Text(
                   'Anggota',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

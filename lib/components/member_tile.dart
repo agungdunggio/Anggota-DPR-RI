@@ -47,7 +47,7 @@ class MemberTile extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(left: 25, right: 25, top: 10),
         decoration: BoxDecoration(
-          color: Colors.grey[300],
+          color: const Color(0xFF493628),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
@@ -81,7 +81,7 @@ class MemberTile extends StatelessWidget {
                     height: 45,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 2),
+                      border: Border.all(color: const Color(0xFF493628), width: 2),
                     ),
                     child: ClipOval(
                       child: Image.asset(
@@ -98,8 +98,8 @@ class MemberTile extends StatelessWidget {
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
               child: Text(
                 member.nama,
-                style: TextStyle(
-                  color: Colors.grey[900],
+                style: const TextStyle(
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -118,8 +118,8 @@ class MemberTile extends StatelessWidget {
                       child: Text(
                         member.daftarAkd.akd[index],
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.grey[600],
+                        style: const TextStyle(
+                          color: Colors.white70,
                           fontSize: 14,
                         ),
                       ),
@@ -134,9 +134,9 @@ class MemberTile extends StatelessWidget {
                 member.dapil,
                 textAlign: TextAlign.start,
                 style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: Colors.white),
               ),
             ),
           ],

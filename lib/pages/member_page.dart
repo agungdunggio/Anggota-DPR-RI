@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:individual_asessment/components/member_tile.dart';
 import 'package:individual_asessment/data/models/members.dart';
@@ -17,11 +16,16 @@ class _MemberPageState extends State<MemberPage> {
   late Future<List<Members>> futureListMembers;
   List<Members> allMemberList = [];
   List<Members> filteredMemberList = [];
+  List<String> selectedFilters = [];
 
   TextEditingController searchController = TextEditingController();
   Timer? _debounce;
 
   bool _isFilterVisible = false;
+
+  // Tambahkan state untuk menyimpan dapil dan fraksi yang dipilih
+  List<String> selectedDapil = [];
+  List<String> selectedFraksi = [];
 
   @override
   void dispose() {
@@ -30,19 +34,47 @@ class _MemberPageState extends State<MemberPage> {
     super.dispose();
   }
 
+  void _onFilterSelected(
+      List<String> selectedDapil, List<String> selectedFraksi) {
+    setState(() {
+      this.selectedDapil = selectedDapil;
+      this.selectedFraksi = selectedFraksi;
+
+      filteredMemberList = allMemberList.where((member) {
+        bool isDapilSelected =
+            selectedDapil.isEmpty || selectedDapil.contains(member.dapil);
+        bool isFraksiSelected =
+            selectedFraksi.isEmpty || selectedFraksi.contains(member.fraksi);
+
+        // Filter berdasarkan kedua dapil dan fraksi jika keduanya dipilih
+        return isDapilSelected && isFraksiSelected;
+      }).toList();
+
+      // Menggabungkan pencarian dan filter
+      filteredMemberList = filteredMemberList.where((member) {
+        String searchText = searchController.text.toLowerCase();
+        return member.nama.toLowerCase().contains(searchText);
+      }).toList();
+    });
+  }
+
   void _onSearchChanged() {
     if (_debounce?.isActive ?? false) _debounce!.cancel();
     _debounce = Timer(const Duration(milliseconds: 500), () {
       setState(() {
         String searchText = searchController.text.toLowerCase();
 
-        if (searchText.isEmpty) {
-          filteredMemberList = allMemberList;
-        } else {
-          filteredMemberList = allMemberList.where((member) {
-            return member.nama.toLowerCase().contains(searchText);
-          }).toList();
-        }
+        // Filter berdasarkan pencarian dan filter yang sudah diterapkan
+        filteredMemberList = allMemberList.where((member) {
+          bool isFilteredByDapil =
+              selectedDapil.isEmpty || selectedDapil.contains(member.dapil);
+          bool isFilteredByFraksi =
+              selectedFraksi.isEmpty || selectedFraksi.contains(member.fraksi);
+
+          return member.nama.toLowerCase().contains(searchText) &&
+              isFilteredByDapil &&
+              isFilteredByFraksi;
+        }).toList();
       });
     });
   }
@@ -56,6 +88,7 @@ class _MemberPageState extends State<MemberPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFD6C0B3),
       body: FutureBuilder<List<Members>>(
         future: futureListMembers,
         builder: (context, snapshot) {
@@ -64,7 +97,7 @@ class _MemberPageState extends State<MemberPage> {
           } else if (snapshot.hasError) {
             return Center(
                 child: Text('Error: ${snapshot.error}',
-                    style: TextStyle(color: Colors.red)));
+                    style: const TextStyle(color: Colors.red)));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
             return const Center(
                 child: Text('No data available',
@@ -78,7 +111,8 @@ class _MemberPageState extends State<MemberPage> {
             return Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 25.0, vertical: 10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,6 +126,7 @@ class _MemberPageState extends State<MemberPage> {
                         icon: const Icon(
                           Icons.filter_list,
                           size: 28,
+                          color: Colors.black,
                         ),
                         onPressed: () {
                           setState(() {
@@ -107,7 +142,12 @@ class _MemberPageState extends State<MemberPage> {
                   curve: Curves.easeInOut,
                   height: _isFilterVisible ? 152 : 0,
                   child: _isFilterVisible
-                      ? FilterTile(members: filteredMemberList)
+                      ? FilterTile(
+                          members: allMemberList,
+                          selectedDapil: selectedDapil,
+                          selectedFraksi: selectedFraksi,
+                          onFilterSelected: _onFilterSelected,
+                        )
                       : const SizedBox.shrink(),
                 ),
                 const SizedBox(height: 5),
@@ -115,7 +155,7 @@ class _MemberPageState extends State<MemberPage> {
                   padding: const EdgeInsets.all(12),
                   margin: const EdgeInsets.symmetric(horizontal: 24),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFE0E0E0),
+                    color: const Color(0xFFAB886D),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Row(
@@ -130,13 +170,13 @@ class _MemberPageState extends State<MemberPage> {
                           decoration: const InputDecoration(
                             hintText: 'Search',
                             border: InputBorder.none,
-                            hintStyle: TextStyle(color: Colors.grey),
+                            hintStyle: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
                       const Icon(
                         Icons.search,
-                        color: Colors.grey,
+                        color: Colors.white,
                       ),
                     ],
                   ),
@@ -152,6 +192,7 @@ class _MemberPageState extends State<MemberPage> {
                     },
                   ),
                 ),
+                const SizedBox(height: 10),
               ],
             );
           }
