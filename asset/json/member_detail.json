@@ -1,0 +1,152 @@
+{
+    "banner": "/dokblog/spanduk/",
+    "nama": "Dr. H. MUHAMMAD KADAFI, S.H., M.H.",
+    "no_anggota": "7",
+    "tempat_lahir": "Banda Aceh",
+    "tanggal_lahir": "1983-10-08",
+    "agama": "Islam",
+    "profil": {},
+    "dapil": {},
+    "kontak": {},
+    "url_facebook": "https://www.facebook.com/profile.php?id=100077509021484",
+    "url_twitter": {},
+    "url_youtube": "https://www.youtube.com/@kdvcenter4923",
+    "url_linkedin": {},
+    "url_website": "http://www.muhammadkadafi.com/",
+    "pendidikan": {
+        "item": [
+            {
+                "jurusan": {},
+                "sekolah": "Madrasah Ibtidaiyah Negeri I Banda aceh",
+                "tahun_masuk": "1989",
+                "tahun_lulus": "1995"
+            },
+            {
+                "jurusan": {},
+                "sekolah": "SMPN 1 Banda Aceh",
+                "tahun_masuk": "1995",
+                "tahun_lulus": "1998"
+            },
+            {
+                "jurusan": {},
+                "sekolah": "SMAN 9 Bandar Lampung",
+                "tahun_masuk": "1998",
+                "tahun_lulus": "2001"
+            },
+            {
+                "jurusan": "Ilmu Hukum",
+                "sekolah": "Universitas Lampung (Lulusan Terbaik Fakultas)",
+                "tahun_masuk": "2002",
+                "tahun_lulus": "2006"
+            },
+            {
+                "jurusan": "Ilmu Hukum",
+                "sekolah": "Magister Hukum Universitas Lampung",
+                "tahun_masuk": "2007",
+                "tahun_lulus": "2009"
+            },
+            {
+                "jurusan": "Ilmu Hukum",
+                "sekolah": "Doktor Ilmu Hukum Universitas Diponegoro",
+                "tahun_masuk": "2013",
+                "tahun_lulus": "2016"
+            }
+        ]
+    },
+    "pekerjaan": {
+        "item": [
+            {
+                "nama_perusahaan": "Kantor Walikota Bandar Lampung",
+                "jabatan": "Staff Ahli",
+                "tahun_awal": "2016",
+                "tahun_akhir": "2021"
+            },
+            {
+                "nama_perusahaan": "Universitas Malahayati",
+                "jabatan": "Rektor",
+                "tahun_awal": "2010",
+                "tahun_akhir": "2019"
+            },
+            {
+                "nama_perusahaan": "PT. Bintang Amin Husada (RS. Pertamina-Bintang Amin) ",
+                "jabatan": "Presiden Direktur",
+                "tahun_awal": {},
+                "tahun_akhir": {}
+            },
+            {
+                "nama_perusahaan": "Yayasan Babun Nadjah",
+                "jabatan": "Ketua Pembina Yayasan",
+                "tahun_awal": {},
+                "tahun_akhir": {}
+            }
+        ]
+    },
+    "organisasi": {
+        "item": [
+            {
+                "nama_organisasi": "PW NU Prov Lampung",
+                "jabatan": "Wakil Ketua Tanfidziyah",
+                "tahun_awal": "2018",
+                "tahun_akhir": "2023"
+            },
+            {
+                "nama_organisasi": "KADIN Lampung ",
+                "jabatan": "Ketua Umum",
+                "tahun_awal": "2017",
+                "tahun_akhir": "2022"
+            },
+            {
+                "nama_organisasi": "HKSN Provinsi Lampung",
+                "jabatan": "Ketua Pelaksana",
+                "tahun_awal": "2017",
+                "tahun_akhir": {}
+            },
+            {
+                "nama_organisasi": "Persatuan Hobby Burung Kicau BNR Indonesia",
+                "jabatan": "Ketua Umum",
+                "tahun_awal": "2016",
+                "tahun_akhir": "2020"
+            },
+            {
+                "nama_organisasi": "MUI Prov. Lampung",
+                "jabatan": "Dewan Pertimbangan MUI",
+                "tahun_awal": "2016",
+                "tahun_akhir": "2021"
+            },
+            {
+                "nama_organisasi": "Koordinator Perguruan Tinggi LPTNU",
+                "jabatan": "Ketua",
+                "tahun_awal": "2015",
+                "tahun_akhir": "2020"
+            },
+            {
+                "nama_organisasi": "BPD HIPMI Lampung",
+                "jabatan": "Ketua Umum",
+                "tahun_awal": "2014",
+                "tahun_akhir": "2017"
+            },
+            {
+                "nama_organisasi": "Aliansi Pedagang Pasar Provinsi Lampung",
+                "jabatan": "Dewan Pakar",
+                "tahun_awal": {},
+                "tahun_akhir": {}
+            },
+            {
+                "nama_organisasi": "Asosiasi Penangkar Burung Nusantara ",
+                "jabatan": "Pembina",
+                "tahun_awal": {},
+                "tahun_akhir": {}
+            },
+            {
+                "nama_organisasi": "Masyarakat Aceh Lampung",
+                "jabatan": "Ketua Pembina",
+                "tahun_awal": {},
+                "tahun_akhir": {}
+            }
+        ]
+    },
+    "pergerakan": {},
+    "penghargaan": {},
+    "kunjungan_luar_negeri": {},
+    "kegiatan": {}
+}
